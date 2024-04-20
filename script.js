@@ -72,8 +72,8 @@ function startAnim(){
 
 function blurAnim(){
     if(blurIndex >= 50 && cycleComplete == false){
-        imageRight.src="back.jpg";
-        imageLeft.src="Photo1.jpg";
+        imageRight.src="images/g2.jpg";
+        imageLeft.src="images/o2.jpg";
         delta = -2;
         cycleComplete = true;
     }
