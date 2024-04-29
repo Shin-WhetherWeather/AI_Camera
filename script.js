@@ -6,6 +6,10 @@ var calcHeight = imageRight.height;
 var width = imageRight.naturalWidth;
 var height = imageRight.naturalHeight;
 
+promptText = document.getElementById("promptText");
+
+console.log()
+
 
 
 //var ratio = imageRight.naturalWidth/imageRight.naturalHeight;
@@ -15,6 +19,12 @@ button = document.getElementById("button");
 
 
 function blurImage(image, blurAmount){
+    calcWidth = imageRight.width;
+    calcHeight = imageRight.height;
+
+    width = imageRight.naturalWidth;
+    height = imageRight.naturalHeight;
+
     var imgString = ""
     if(image == imageRight){
         imgString = "imageRightCanvas";
@@ -60,22 +70,51 @@ var id;
 var delta;
 var blurIndex;
 var cycleComplete;
-
+var lastSelection = 1;
+var promptId;
+var indexText = 0;
+var insideText = ""
 
 function startAnim(){
+    clearInterval(id);
+    clearInterval(promptId);
     cycleComplete = false;
     delta = 2;
     blurIndex = 2;
     id = setInterval(blurAnim, 50);
+    indexText = 0;
+    promptText.innerText = "";
+}
+
+function typeWriter(){
+    tempText = insideText.split(" ");
+    if(indexText < tempText.length){
+        promptText.innerText = promptText.innerText + "  " + tempText[indexText];
+        indexText ++;
+    }
+    else{
+        clearInterval(promptId);
+    }
 }
 
 
 function blurAnim(){
     if(blurIndex >= 50 && cycleComplete == false){
-        imageRight.src="images/g2.jpg";
-        imageLeft.src="images/o2.jpg";
+        let selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+
+        while(lastSelection == selection){
+            selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+        }
+        lastSelection = selection;
+        //Object.keys(prompts).length
+        imageRight.src="images/g" + selection + ".jpg";
+        imageLeft.src="images/o" + selection + ".jpg";
         delta = -2;
         cycleComplete = true;
+
+        insideText = prompts[selection];
+
+        promptId = setInterval(typeWriter, 100);
     }
     else if(blurIndex <= 1 && cycleComplete){
         
