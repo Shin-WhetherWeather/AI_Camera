@@ -22,6 +22,36 @@
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
   }
+  .material-symbols-outlined{
+    font-size: 54px;
+  }
+
+  .icon{
+    position: absolute;
+    z-index: 7;
+    top:24px;
+    right: 24px;
+    cursor:pointer;
+    transition: 500ms;
+  }
+
+  .icon:hover{
+    transform: scale(1.1);
+  }
+
+  .logo{
+    font-weight: 300;
+    position: absolute;
+    z-index: 7;
+    top:24px;
+    left:24px;
+    font-size: 40px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
 
 img{
     width: 100%;
