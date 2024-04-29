@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body, html {
@@ -75,12 +76,18 @@ img{
     height: 100%;
     border-radius: 100vmax;
     filter: brightness(1.5);
-    transition: 400ms;
+    transition: 400ms, transform 60ms;
     cursor:pointer;
 }
 
 .button:hover{
     filter: brightness(1);
+    box-shadow: inset 0px 0px 0px 8px #e64900, inset 0px 0px 5px 16px #FE5000, 0px 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.button:active{
+    transform: scale(0.9);
+    box-shadow: none;
 }
 
 @media only screen and (min-width: 1080px) {
