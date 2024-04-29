@@ -130,6 +130,4 @@ function blurAnim(){
     }
 }
 
-
-button.addEventListener('click', function(){startAnim()});
-
+window.onload = function(){button.addEventListener('click', function(){startAnim()});};
