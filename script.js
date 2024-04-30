@@ -16,6 +16,8 @@ infoButton = document.getElementById("infoButton");
 //var ratio = imageRight.naturalWidth/imageRight.naturalHeight;
 
 button = document.getElementById("button");
+promptButton = document.getElementById("promptButton");
+promptPopout = document.getElementById("promptPopout");
 
 
 
@@ -75,6 +77,7 @@ var lastSelection = 1;
 var promptId;
 var indexText = 0;
 var insideText = ""
+var modifierIndex = 0;
 
 function startAnim(){
     clearInterval(id);
@@ -150,9 +153,19 @@ function getInfo(){
 
 }
 
+function modifyPrompt(){
+    modifierIndex ++;
+    if(modifierIndex > promptModifiers.length - 1){
+        modifierIndex = 0;
+    }
+
+    promptPopout.innerText = promptModifiers[modifierIndex];
+    console.log(promptModifiers[modifierIndex])
+}
+
 
 window.onload = function(){
     button.addEventListener('click', function(){startAnim()});
     infoButton.addEventListener('click', function(){getInfo()});
-
+    promptButton.addEventListener('click', function(){modifyPrompt()});
 };
