@@ -60,12 +60,14 @@ img{
 }
 
 .image{
+    position:relative;
     margin: 6px;
     background-color: black;
     height: calc(50% - 12px);
 }
 
 .imageContainer{
+
     padding: 6px;
     display: flex;
     flex-direction: column;
@@ -120,6 +122,30 @@ img{
     box-shadow: none;
 }
 
+
+.textOverlayLeft{
+    color: white;
+    font-weight: 300;
+    font-size: 2vw;
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 12;
+    text-shadow: 0px 0px 5px black;
+}
+
+.textOverlayRight{
+    color:white;
+    font-weight: 300;
+    text-align: right;
+    font-size: 2vw;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 12;
+    text-shadow: 0px 0px 5px black;
+}
+
 @media only screen and (min-width: 1080px) {
     body, html {
         font-size: 1.1vw;
@@ -143,4 +169,10 @@ img{
     .buttonContainer{
         top: calc(40% - 35px);
     }
+
+    .textOverlayLeft, .textOverlayRight{
+        font-size: 1vw;
+    }
+    
+    
 }

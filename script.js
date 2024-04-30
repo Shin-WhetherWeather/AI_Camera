@@ -8,8 +8,8 @@ var height = imageRight.naturalHeight;
 
 promptText = document.getElementById("promptText");
 
-console.log()
-
+textOverlayLeft = document.getElementById("textOverlayLeft");
+textOverlayRight = document.getElementById("textOverlayRight");
 
 
 //var ratio = imageRight.naturalWidth/imageRight.naturalHeight;
@@ -112,6 +112,8 @@ function blurAnim(){
         delta = -2;
         cycleComplete = true;
 
+        textOverlayLeft.innerHTML = mLeft[selection];
+        textOverlayRight.innerHTML = mRight[selection];
         insideText = prompts[selection];
 
         promptId = setInterval(typeWriter, 100);

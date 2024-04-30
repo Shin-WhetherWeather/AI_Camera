@@ -16,5 +16,41 @@ prompts = {
     "14": "An urban concrete courtyard with a metal framed sculpture, a skateboard park and trees in the background. An out of focus person skateboarding on one side of the frame. Concrete benches and stainless steel bar wall panels. Architectural photography of architectural scenes, taken from behind the camera looking up at the subject, in the style of architectural photography. ",
 
 }
+
+mLeft = {
+    "1": "..[] Camera<br>F1.8 1/125  4.74mm<br>10:39 25/04/2024",
+    "2": "..[] Camera<br>F1.8 1/125  4.74mm<br>10:41 25/04/2024",
+    "3": "..[] Camera<br>F1.8 1/125  4.74mm<br>10:50 25/04/2024",
+    "4": "..[] Camera<br>F1.8 1/500  4.74mm<br>11:07 25/04/2024",
+    "5": "..[] Camera<br>F1.8 1/250  4.74mm<br>11:08 25/04/2024",
+    "6": "..[] Camera<br>F1.8 1/1250  4.74mm<br>11:30 25/04/2024",
+    "7": "..[] Camera<br>F1.8 1/1250  4.74mm<br>11:35 25/04/2024",
+    "8": "..[] Camera<br>F1.8 1/500  4.74mm<br>11:08 25/04/2024",
+    "9": "..[] Camera<br>F1.8 1/500  4.74mm<br>10:40 25/04/2024",
+    "10": "..[] Camera<br>F1.8 1/250  4.74mm<br>10:42 26/04/2024",
+    "11": "..[] Camera<br>F1.8 1/500  4.74mm<br>10:51 26/04/2024",
+    "12": "..[] Camera<br>F1.8 1/250  4.74mm<br>10:59 26/04/2024",
+    "13": "..[] Camera<br>F1.8 1/500  4.74mm<br>11:07 26/04/2024",
+    "14": "..[] Camera<br>F1.8 1/1250  4.74mm<br>11:08 26/04/2024",
+}
+
+mRight = {
+    "1": "Midjourney v6<br>10:39 25/04/2024",
+    "2": "Midjourney v6<br>10:42 25/04/2024",
+    "3": "Midjourney v6<br>10:51 25/04/2024",
+    "4": "Midjourney v6<br>11:09 25/04/2024",
+    "5": "Midjourney v6<br>11:08 25/04/2024",
+    "6": "Midjourney v6<br>11:31 25/04/2024",
+    "7": "Midjourney v6<br>11:37 25/04/2024",
+    "8": "Midjourney v6<br>11:11 25/04/2024",
+    "9": "Midjourney v6<br>10:40 25/04/2024",
+    "10": "Midjourney v6<br>10:43 26/04/2024",
+    "11": "Midjourney v6<br>10:52 26/04/2024",
+    "12": "Midjourney v6<br>11:02 26/04/2024",
+    "13": "Midjourney v6<br>11:08 26/04/2024",
+    "14": "Midjourney v6<br>11:09 26/04/2024",
+}
+
+
     
 
