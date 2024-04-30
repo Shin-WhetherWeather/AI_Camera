@@ -11,6 +11,7 @@ promptText = document.getElementById("promptText");
 textOverlayLeft = document.getElementById("textOverlayLeft");
 textOverlayRight = document.getElementById("textOverlayRight");
 
+infoButton = document.getElementById("infoButton");
 
 //var ratio = imageRight.naturalWidth/imageRight.naturalHeight;
 
@@ -81,7 +82,7 @@ function startAnim(){
     cycleComplete = false;
     delta = 2;
     blurIndex = 2;
-    id = setInterval(blurAnim, 50);
+    id = setInterval(blurAnim, 60);
     indexText = 0;
     promptText.innerText = "";
 }
@@ -131,5 +132,27 @@ function blurAnim(){
         blurIndex = blurIndex + delta;
     }
 }
+function getInfo(){
+    clearInterval(id);
+    clearInterval(promptId);
+    indexText = 0;
+    promptText.innerText = "";
+    insideText = "The ..(_) AI Camera is a creative tool for exploring the emerging intersection between generative artificial intelligence (AI) and creative practice. Referencing the spontaneity and fun of retro instant cameras, you simply point the ‘camera’ towards something of interest, press the ‘shutter button,’ and an AI-generated image is instantly printed. ";
+    textOverlayLeft.innerHTML = "<a style='color: black;' href='https://www.rowanpage.com/'> Rowan Page </a>";
+    textOverlayRight.innerHTML = "<a style='color: #dbdbdb;' href = 'https://seejianshin.com/'>Jian Shin See</a>";
+    imageRight.src="images/x1.jpg";
+    imageLeft.src="images/x2.jpg";
+    promptId = setInterval(typeWriter, 100);
+    setTimeout(function(){
+        blurImage(imageRight, 1);
+        blurImage(imageLeft, 1);
+    }, 100);
 
-window.onload = function(){button.addEventListener('click', function(){startAnim()});};
+}
+
+
+window.onload = function(){
+    button.addEventListener('click', function(){startAnim()});
+    infoButton.addEventListener('click', function(){getInfo()});
+
+};
