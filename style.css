@@ -18,6 +18,127 @@
     position: absolute;
   }
 
+  .overlay{
+    position: fixed;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    background-color: #979797;
+    color:#232323;
+    font-weight: 500;
+    font-size: 3vw;
+    padding-top: 48vh;
+    padding-left: 40vw;
+    display:inline-block;
+  }
+
+  
+  .typeWriter{
+    transition: 0ms;
+    position:relative;
+    overflow: hidden;
+    width: fit-content;
+    white-space: nowrap;
+    padding-right: 8px;
+    box-shadow: 8px 0 0 0 #FE5000;
+    width: 0;
+    animation: 
+        typing 6s steps(9, end) infinite,
+        blinking 6s steps(1, end) infinite;
+
+  }
+
+  @keyframes typing{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 9ch;
+    }
+    75%{
+        width: 9ch;
+    }
+    100%{
+        width: 0ch;
+    }
+  }
+
+  @keyframes blinking{
+    0%{}
+
+
+    50%{box-shadow: 8px 0 0 0 #FE5000;}
+    55%{box-shadow: 8px 0 0 0 #979797;}
+    60%{box-shadow: 8px 0 0 0 #FE5000;}
+    65%{box-shadow: 8px 0 0 0 #979797;}
+    70%{box-shadow: 8px 0 0 0 #FE5000;}
+
+
+    75%{}
+    100%{}
+  }
+
+
+  /*
+  @keyframes typing {
+    0%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    2.5%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #979797;
+    }
+    5%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    7.5%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #979797;
+    }
+    10%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    12.5%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #979797;
+    }
+    15%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    45%{
+        width: 9ch;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    47.5%{
+        width: 9ch;
+        box-shadow: 8px 0 0 0 #979797;
+    }
+    50%{
+        width: 9ch;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    52.5%{
+        width: 9ch;
+        box-shadow: 8px 0 0 0 #979797;
+    }
+    55%{
+        width: 9ch;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+    100%{
+        width: 0;
+        box-shadow: 8px 0 0 0 #FE5000;
+    }
+  }
+*/
+
+
+
+
   ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */

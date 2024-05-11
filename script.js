@@ -19,6 +19,8 @@ button = document.getElementById("button");
 promptButton = document.getElementById("promptButton");
 promptPopout = document.getElementById("promptPopout");
 
+overlay = document.getElementById("overlay");
+
 
 
 function blurImage(image, blurAmount){
@@ -206,4 +208,5 @@ window.onload = function(){
     button.addEventListener('click', function(){startAnim()});
     infoButton.addEventListener('click', function(){getInfo()});
     promptButton.addEventListener('click', function(){modifyPrompt()});
+    overlay.remove();
 };
