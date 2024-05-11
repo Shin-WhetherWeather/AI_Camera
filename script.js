@@ -78,6 +78,11 @@ var promptId;
 var indexText = 0;
 var insideText = ""
 var modifierIndex = 0;
+var blurRight = false;
+
+var selection = 0;
+
+
 
 function startAnim(){
     clearInterval(id);
@@ -104,37 +109,63 @@ function typeWriter(){
 
 function blurAnim(){
     if(blurIndex >= 50 && cycleComplete == false){
-        let selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
-
-        while(lastSelection == selection){
+        let selection = lastSelection;
+        if(!blurRight){
             selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+
+            while(lastSelection == selection){
+                selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+            }
+            lastSelection = selection;
         }
-        lastSelection = selection;
-        //Object.keys(prompts).length
-        imageRight.src="images/g" + selection + ".jpg";
-        imageLeft.src="images/o" + selection + ".jpg";
+
+
         delta = -2;
         cycleComplete = true;
 
-        textOverlayLeft.innerHTML = mLeft[selection];
-        textOverlayRight.innerHTML = mRight[selection];
-        insideText = prompts[selection];
+        
+        if(blurRight){
+            imageRight.src="images/" + modifierPrefix[modifierIndex] + selection + ".jpg"; 
+        }
+        else{
+            imageRight.src="images/" + modifierPrefix[modifierIndex] + selection + ".jpg";
+            imageLeft.src="images/o" + selection + ".jpg";
 
-        promptId = setInterval(typeWriter, 100);
+            textOverlayLeft.innerHTML = mLeft[selection];
+            textOverlayRight.innerHTML = mRight[selection];
+            insideText = prompts[selection];
+
+            promptId = setInterval(typeWriter, 100);
+        }
+        
+
+        
     }
     else if(blurIndex <= 1 && cycleComplete){
         
         blurImage(imageRight, 1);
-        blurImage(imageLeft, 1);
+        if(!blurRight){
+            blurImage(imageLeft, 1);
+        }
+        
         clearInterval(id);
+        blurRight = false;
         return;
     }
     else{
         blurImage(imageRight, blurIndex);
-        blurImage(imageLeft, blurIndex);
+        if(!blurRight){
+            blurImage(imageLeft, blurIndex);
+        }
         blurIndex = blurIndex + delta;
     }
 }
+
+
+
+
+
+
 function getInfo(){
     clearInterval(id);
     clearInterval(promptId);
@@ -160,7 +191,14 @@ function modifyPrompt(){
     }
 
     promptPopout.innerText = promptModifiers[modifierIndex];
-    console.log(promptModifiers[modifierIndex])
+    blurRight = true;
+
+    clearInterval(id);
+    clearInterval(promptId);
+    cycleComplete = false;
+    delta = 2;
+    blurIndex = 2;
+    id = setInterval(blurAnim, 60);
 }
 
 

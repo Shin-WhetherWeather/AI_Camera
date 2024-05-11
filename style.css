@@ -92,12 +92,12 @@ img{
 .buttonContainer{
     position: fixed;
     z-index: 9;
-    width: 180px;
-    height: 70px;
+    width: 144px;
+    height: 56px;
     background-color: #dbdbdb;
     border-radius: 100vmax;
-    top: calc(35% - 35px);
-    left:calc(50% - 35px);
+    top: calc(35% - 28px);
+    left:calc(50% - 5px);
     padding: 8px;
 }
 
@@ -126,12 +126,12 @@ img{
 .promptButtonContainer{
     position: fixed;
     z-index: 9;
-    width: 70px;
-    height: 70px;
+    width: 56px;
+    height: 56px;
     background-color: #dbdbdb;
     border-radius: 100vmax;
-    top: calc(35% - 35px);
-    left:calc(50% - 125px);
+    top: calc(35% - 28px);
+    left:calc(50% - 70px);
     padding: 6px;
 }
 
@@ -255,9 +255,12 @@ img{
         width: 70px;
         height: 180px;
         top: calc(40% - 35px);
+        left:calc(50% - 35px);
     }
 
     .promptButtonContainer{
+        width: 70px;
+        height: 70px;
         top: calc(40% - 125px);
         left:calc(50% - 35px);
     }
