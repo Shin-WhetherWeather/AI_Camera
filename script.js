@@ -84,6 +84,19 @@ var blurRight = false;
 
 var selection = 0;
 
+var options = [];
+var weights = [];
+var selectedIndex = 0;
+var randResult = [];
+
+for(var i = 0 ; i < Object.keys(prompts).length; i++){
+    options.push(i);
+    randResult[i] = 0;
+    weights.push(20);
+}
+
+//console.log(options);
+
 
 
 function startAnim(){
@@ -108,16 +121,31 @@ function typeWriter(){
     }
 }
 
-
 function blurAnim(){
+
     if(blurIndex >= 50 && cycleComplete == false){
         let selection = lastSelection;
         if(!blurRight){
-            selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
 
-            while(lastSelection == selection){
-                selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+            var randSelection = [];
+
+            for(var i = 0 ; i < Object.keys(prompts).length; i++){
+                weights[i] = weights[i] < 20 ? weights[i] + 1 : 20;
+                var clone = Array(   weights[i] >= 0 ? weights[i] : 0   ).fill(i);
+                randSelection.push(...clone);
             }
+            selection = randSelection[~~(Math.random() * randSelection.length)] + 1;
+            weights[selection - 1] = -5;
+            //console.log(weights);
+            randResult[selection - 1] ++;
+            //console.log(randResult);
+
+
+            //selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+
+            //while(lastSelection == selection){
+                //selection = Math.floor(Math.random() * (Object.keys(prompts).length)) + 1;
+            //}
             lastSelection = selection;
         }
 
@@ -173,7 +201,7 @@ function getInfo(){
     clearInterval(promptId);
     indexText = 0;
     promptText.innerText = "";
-    insideText = "The ..(_) AI Camera is a creative tool for exploring the emerging intersection between generative artificial intelligence (AI) and creative practice. Referencing the spontaneity and fun of retro instant cameras, you simply point the ‘camera’ towards something of interest, press the ‘shutter button,’ and an AI-generated image is instantly printed. ";
+    insideText = "The ..(_) AI Camera is a creative tool for exploring the emerging intersection between generative artificial intelligence (AI) and creative practice. Referencing the spontaneity and fun of retro instant cameras, you simply point the ‘camera’ towards something of interest, press the ‘shutter button,’ and an AI-generated image is instantly printed.";
     textOverlayLeft.innerHTML = "<a style='color: black;' href='https://www.rowanpage.com/'> Rowan Page </a>";
     textOverlayRight.innerHTML = "<a style='color: #dbdbdb;' href = 'https://seejianshin.com/'>Jian Shin See</a>";
     imageRight.src="images/x1.jpg";
