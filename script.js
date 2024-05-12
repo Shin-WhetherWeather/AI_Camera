@@ -107,7 +107,7 @@ function startAnim(){
     blurIndex = 2;
     id = setInterval(blurAnim, 60);
     indexText = 0;
-    promptText.innerText = "";
+    promptText.innerText = "Loading...";
 }
 
 function typeWriter(){
@@ -165,6 +165,7 @@ function blurAnim(){
             textOverlayRight.innerHTML = mRight[selection];
             insideText = prompts[selection];
 
+            promptText.innerText = "";
             promptId = setInterval(typeWriter, 100);
         }
         
@@ -224,7 +225,6 @@ function modifyPrompt(){
     blurRight = true;
 
     clearInterval(id);
-    clearInterval(promptId);
     cycleComplete = false;
     delta = 2;
     blurIndex = 2;
