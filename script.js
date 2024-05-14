@@ -236,5 +236,5 @@ window.onload = function(){
     button.addEventListener('click', function(){startAnim()});
     infoButton.addEventListener('click', function(){getInfo()});
     promptButton.addEventListener('click', function(){modifyPrompt()});
-    //overlay.remove();
+    overlay.remove();
 };
