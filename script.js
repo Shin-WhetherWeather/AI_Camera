@@ -202,7 +202,7 @@ function getInfo(){
     clearInterval(promptId);
     indexText = 0;
     promptText.innerText = "";
-    insideText = "The ..(_) AI Camera is a creative tool for exploring the emerging intersection between generative artificial intelligence (AI) and creative practice. Referencing the spontaneity and fun of retro instant cameras, you simply point the ‘camera’ towards something of interest, press the ‘shutter button,’ and an AI-generated image is instantly printed.";
+    insideText = "The ** [ ] AI Camera is a creative tool for exploring the emerging intersection between generative artificial intelligence (AI) and creative practice. Referencing the spontaneity and fun of retro instant cameras, you simply point the ‘camera’ towards something of interest, press the ‘shutter button,’ and an AI-generated image is instantly printed.";
     textOverlayLeft.innerHTML = "<a style='color: black;' href='https://www.rowanpage.com/'> Rowan Page </a>";
     textOverlayRight.innerHTML = "<a style='color: #dbdbdb;' href = 'https://seejianshin.com/'>Jian Shin See</a>";
     imageRight.src="images/x1.jpg";
@@ -236,5 +236,5 @@ window.onload = function(){
     button.addEventListener('click', function(){startAnim()});
     infoButton.addEventListener('click', function(){getInfo()});
     promptButton.addEventListener('click', function(){modifyPrompt()});
-    overlay.remove();
+    //overlay.remove();
 };

@@ -39,11 +39,11 @@
     overflow: hidden;
     width: fit-content;
     white-space: nowrap;
-    padding-right: 8px;
+    padding-right: 6px;
     box-shadow: 8px 0 0 0 #FE5000;
     width: 0;
     animation: 
-        typing 6s steps(9, end) infinite,
+        typing 6s steps(7, end) infinite,
         blinking 6s steps(1, end) infinite;
 
   }
@@ -53,10 +53,10 @@
         width: 0;
     }
     50%{
-        width: 9ch;
+        width: 7ch;
     }
     75%{
-        width: 9ch;
+        width: 7ch;
     }
     100%{
         width: 0ch;
@@ -161,7 +161,7 @@
   }
 
   .logo{
-    font-weight: 300;
+    font-weight: 500;
     position: absolute;
     z-index: 7;
     top:24px;
@@ -350,6 +350,10 @@ img{
 }
 
 @media only screen and (min-width: 1080px) {
+    .typeWriter{
+        padding-right: 8px;
+      }
+
     .popout{
         display:block;
     }
